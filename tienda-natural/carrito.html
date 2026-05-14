@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Carrito | Sabores de la Tierra</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+  <!-- ================= HEADER ================= -->
+  <header>
+    <h1>Sabores de la Tierra</h1>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="productos.html">Productos</a>
+      <a href="nosotros.html">Nosotros</a>
+      <a href="carrito.html" class="nav-carrito">
+        <span>Carrito</span>
+        <div class="carrito-icono">
+          <span class="icono">🛒</span>
+          <span class="contador" id="contador-carrito">0</span>
+        </div>
+      </a>
+    </nav>
+  </header>
+
+  <!-- ================= CONTENIDO PRINCIPAL ================= -->
+  <main class="container">
+
+    <section>
+      <h1>Carrito de compras</h1>
+      <p>Revisá los productos antes de confirmar tu pedido.</p>
+    </section>
+
+    <!-- ================= LISTA DE PRODUCTOS ================= -->
+    <section class="cart" id="carrito-items">
+      <!-- Productos generados dinámicamente desde localStorage -->
+    </section>
+
+    <!-- ================= RESUMEN ================= -->
+
+
+    <!-- ================= RESUMEN Y BOTÓN FINALIZAR ================= -->
+    <section class="cart-summary">
+      <h2>Resumen del pedido</h2>
+      <p>Total: <strong>$<span id="carrito-total">0</span></strong></p>
+
+      <!-- Aviso para el usuario -->
+      <p class="aviso-compra">
+        Al hacer clic en “Finalizar compra”, serás redirigido a WhatsApp. 
+        Nuestro equipo se pondrá en contacto para coordinar el pago y el envío. 
+        Los envíos se realizan en un plazo de 48 horas hábiles.
+      </p>
+
+      <button id="btn-finalizar-compra" class="btn-primary">Finalizar compra</button>
+    </section>
+
+
+
+
+  </main>
+
+  <!-- ===================================== FOOTER ====================================== -->
+  <footer>
+    <p>📍 
+      <a href="https://maps.app.goo.gl/as6M8Drw7A7B4qcY6" target="_blank" class="footer-link">
+        Independencia 1054 - Córdoba
+      </a>
+    </p>
+    <p>📲 WhatsApp:
+      <a href="https://wa.me/5493515426971" target="_blank">Escribinos</a>
+    </p>
+    <p>📸
+      <a href="https://www.instagram.com/saboresdelatierradiet/" target="_blank" class="footer-link">
+        @saboresdelatierradiet
+      </a>
+    </p>
+  </footer>
+
+  <!-- Botón flotante de WhatsApp -->
+  <a href="https://wa.me/5493515426971" class="whatsapp-float" target="_blank" aria-label="Contactar por WhatsApp">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+  </a>
+
+
+  <!-- ================= SCRIPT BOTÓN FINALIZAR → WHATSAPP ================= -->
+  <script>
+    const botonFinalizar = document.getElementById("btn-finalizar-compra");
+
+botonFinalizar.addEventListener("click", () => {
+  if(carrito.length === 0){
+    alert("Tu carrito está vacío");
+    return;
+  }
+
+  // Crear texto con todos los productos
+  let textoPedido = "Hola 👋, quiero finalizar mi compra en Sabores de la Tierra.\n\n";
+  textoPedido += "Mi pedido:\n";
+
+  let total = 0;
+  carrito.forEach(item => {
+    textoPedido += `- ${item.nombre} | Cantidad: ${item.cantidad} | Precio: $${item.precio * item.cantidad}\n`;
+    total += item.precio * item.cantidad;
+  });
+
+  textoPedido += `\nTotal: $${total}\n\n`;
+  textoPedido += "Por favor, coordinemos el pago y el envío.";
+
+  // Codificar el mensaje para URL
+  const mensaje = encodeURIComponent(textoPedido);
+  const numeroWhatsApp = "5493515426971";
+  window.open(`https://wa.me/${numeroWhatsApp}?text=${mensaje}`, "_blank");
+});
+
+  </script>
+
+  <script src="js/main.js"></script>
+
+
+</body>
+</html>

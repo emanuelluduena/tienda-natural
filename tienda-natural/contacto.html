@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Contacto | Sabores de la Tierra</title>
+
+  <!-- Adaptación a celulares -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS general del sitio -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+  <!-- ================= HEADER ================= -->
+  <header>
+
+    <!-- Nombre / logo del sitio -->
+    <h1>Sabores de la Tierra</h1>
+
+    <!-- =====================================
+         NAVEGACIÓN PRINCIPAL
+         Menú del sitio
+    ====================================== -->
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="productos.html">Productos</a>
+      <a href="nosotros.html">Nosotros</a>
+      <a href="contacto.html">Contacto</a>
+      <a href="carrito.html" class="nav-carrito">
+      <span>Carrito</span>
+
+  <div class="carrito-icono">
+    <span class="icono">🛒</span>
+    <span class="contador" id="contador-carrito">0</span>
+  </div>
+</a>
+
+</a>
+
+    </nav>
+
+  </header>
+
+  <!-- ================= CONTENIDO PRINCIPAL ================= -->
+  <main class="container">
+
+    <!-- Introducción -->
+    <!-- Sección contacto -->
+<section class="contacto">
+  <h1>Contacto</h1>
+  <p>
+    ¿Tenés dudas, consultas o querés hacer un pedido?
+    Escribinos y te respondemos a la brevedad.
+  </p>
+</section>
+
+<!-- Formulario de contacto -->
+<section class="contacto-formulario">
+  <h2>Escribinos</h2>
+
+  <!-- 
+    IMPORTANTE:
+    Por ahora el formulario es solo visual.
+    Más adelante lo vamos a conectar con email / WhatsApp.
+  -->
+
+  <form class="contact-form">
+
+    <label>
+      Nombre
+      <input type="text" placeholder="Tu nombre" required>
+    </label>
+
+    <label>
+      Email
+      <input type="email" placeholder="Tu email" required>
+    </label>
+
+    <label>
+      Mensaje
+      <textarea rows="4" placeholder="Escribí tu mensaje" required></textarea>
+    </label>
+
+    <button type="submit">Enviar mensaje</button>
+
+  </form>
+</section>
+
+
+    
+
+  </main>
+
+  <!-- =====================================
+       FOOTER
+       Información de contacto
+  ====================================== -->
+  <footer>
+    <p>📍 
+      <a href="https://maps.app.goo.gl/as6M8Drw7A7B4qcY6"
+      target="_blank"
+      class="footer-link"
+    >
+      Independencia 1054 - Córdoba
+      </a>
+    </p>
+    <p>
+    📲 WhatsApp:
+    <a href="https://wa.me/5493515426971" target="_blank">
+      Escribinos
+    </a>
+  </p>
+    
+    <p>
+    📸
+    <a 
+      href="https://www.instagram.com/saboresdelatierradiet/"
+      target="_blank"
+      class="footer-link"
+    >
+      @saboresdelatierradiet
+    </a>
+  </p>
+
+  </footer>
+
+  <!-- Botón flotante de WhatsApp -->
+<a
+  href="https://wa.me/5493515426971"
+  class="whatsapp-float"
+  target="_blank"
+  aria-label="Contactar por WhatsApp"
+>
+  <img
+    src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+    alt="WhatsApp"
+  />
+</a>
+
+
+</body>
+</html>

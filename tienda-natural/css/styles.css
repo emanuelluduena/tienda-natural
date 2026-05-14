@@ -1,0 +1,743 @@
+/* ===================================== */
+/* VARIABLES DE COLOR (IDENTIDAD VISUAL) */
+/* ===================================== */
+:root {
+  --verde-principal: #6b8e23;
+  --verde-suave: #e6f2d9;
+  --texto-principal: #333;
+}
+
+/* ===================================== */
+/* RESET / CONFIGURACIÓN GLOBAL */
+/* ===================================== */
+* {
+  box-sizing: border-box;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* ===================================== */
+/* TIPOGRAFÍA GENERAL */
+/* ===================================== */
+h1{
+  font-weight: 600;
+  color: #ccc;
+}
+
+h2, h3 {
+  font-weight: 600;
+  color: var(--verde-principal);
+}
+
+h1 { font-size: 2.2rem; }
+h2 { font-size: 1.6rem; margin-bottom: 10px; }
+h3 { font-size: 1.2rem; margin-bottom: 10px; color: var(--texto-principal); }
+
+p {
+  font-size: 1rem;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+small {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+/* ===================================== */
+/* ENLACES */
+/* ===================================== */
+a {
+  text-decoration: none;
+  color: var(--verde-principal);
+  font-weight: 500;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ===================================== */
+/* HEADER / NAVEGACIÓN */
+/* ===================================== */
+header {
+  background-color: var(--verde-principal);
+  color: white;
+  padding: 20px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  margin: 0;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav {
+  display: flex;
+  gap: 15px;
+}
+
+nav a {
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Contenedor carrito dentro del nav */
+.nav-carrito {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  font-size: 14px;
+}
+
+.carrito-icono { position: relative; }
+
+.contador {
+  position: absolute;
+  top: -6px;
+  right: -10px;
+  background-color: red;
+  color: white;
+  font-size: 11px;
+  padding: 2px 6px;
+  border-radius: 50%;
+}
+
+/* ===================================== */
+/* SECCIÓN HERO */
+/* ===================================== */
+.hero {
+  background-color: var(--verde-suave);
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.hero h2 { margin-bottom: 10px; }
+.hero p { font-size: 18px; }
+
+/* ===================================== */
+/* SECCIÓN CATEGORÍAS */
+/* ===================================== */
+.categorias {
+  background-color: white;
+  padding: 40px 20px;
+}
+
+.categorias ul {
+  list-style: none;
+  padding: 0;
+}
+
+.categorias li {
+  background-color: #f0f0f0;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+/* ===================================== */
+/* SECCIÓN PRODUCTOS (Flexbox / Grid) */
+/* ===================================== */
+.productos {
+  background-color: #f9f9f9;
+  padding: 40px 20px;
+}
+
+.productos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+/* TARJETA DE PRODUCTO */
+.producto {
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.producto h3 { margin-bottom: 10px; color: var(--texto-principal); }
+
+.producto img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+/* ===================================== */
+/* IMÁGENES DE PRODUCTO – ZOOM SUAVE */
+.producto img {
+  transition: transform 0.4s ease;
+}
+
+.producto:hover img {
+  transform: scale(1.05);
+}
+
+
+.precio {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--verde-principal);
+  margin-bottom: 15px;
+}
+
+.btn-producto {
+  display: inline-block;
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: var(--verde-principal);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-producto:hover { background-color: #202b12; }
+
+/* ===================================== */
+/* PRODUCTOS – HOVER AVANZADO */
+/* ===================================== */
+
+.producto:hover {
+  transform: translateY(-8px) scale(1.20); /* Suben y se agrandan levemente */
+  box-shadow: 0 12px 25px rgba(0,0,0,0.12); /* Sombra más profunda */
+}
+
+
+/* ===================================== */
+/* FORMULARIO DE CONTACTO */
+/* ===================================== */
+.form-contacto {
+  max-width: 420px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+.form-grupo { margin-bottom: 20px; }
+
+.form-grupo label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.form-grupo input,
+.form-grupo textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.form-grupo input:focus,
+.form-grupo textarea:focus {
+  outline: none;
+  border-color: var(--verde-principal);
+}
+
+.form-grupo textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.btn-enviar {
+  background-color: var(--verde-principal);
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-enviar:hover { background-color: #5a7a1f; }
+
+/* ===================================== */
+/* CARRITO */
+/* ===================================== */
+.carrito {
+  width: 100%;
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f9f9f5;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  font-family: 'Arial', sans-serif;
+}
+
+.carrito h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.carrito-items {
+  min-height: 100px;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.carrito-vacio {
+  text-align: center;
+  color: #777;
+  font-style: italic;
+}
+
+.carrito-item img {
+  width: 70px;
+  height: auto;
+}
+
+.carrito-info {
+  flex: 1;
+  margin-left: 20px;
+}
+
+.carrito-precio {
+  font-weight: 600;
+  color: var(--verde-principal);
+}
+
+.carrito-cantidad {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.carrito-total {
+  margin-top: 30px;
+  text-align: right;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.btn-finalizar {
+  background-color: var(--verde-principal);
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.btn-finalizar:hover { background-color: #556b2f; }
+
+/* Botones con “pop” al pasar el mouse */
+.btn-producto:hover,
+.btn-enviar:hover,
+.btn-finalizar:hover {
+  transform: translateY(-06px); /* Se levanta levemente */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+
+/* ===================================== */
+/* MENÚ NAVEGACIÓN – HOVER */
+nav a:hover {
+  color: var(--verde-principal);
+  letter-spacing: 1px; /* Pequeño movimiento visual */
+}
+
+
+.carrito-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-top: 1px solid #ddd;
+  margin-top: 10px;
+}
+
+/* ===================================== */
+/* FOOTER GENERAL */
+/* ===================================== */
+footer {
+  background-color: var(--verde-principal);
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+footer a:hover { text-decoration: underline; }
+
+/* ===================================== */
+/* BOTÓN FLOTANTE WHATSAPP */
+/* ===================================== */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 55px;
+  height: 55px;
+  background-color: #25d366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  z-index: 1000;
+}
+
+.whatsapp-float img {
+  width: 28px;
+  height: 28px;
+}
+
+.whatsapp-float:hover {
+  background-color: #1ebe5d;
+  transform: scale(1.05);
+}
+
+/* ===================================== */
+/* PASO EXTRA: BASE RESPONSIVE (MUY SIMPLE) */
+/* ===================================== */
+@media (max-width: 600px) {
+  .producto { width: 100%; }
+}
+
+/* ===================================== */
+/* TRANSICIONES SUAVES GENERALES */
+/* ===================================== */
+
+/* Aplica a todo: botones, tarjetas, links */
+* {
+  transition: all 0.3s ease;
+}
+
+/* ===================================== */
+/* ANIMACIÓN SUAVE DE ENTRADA DE SECCIONES */
+section {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s forwards;
+  animation-delay: 0.2s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+/* ===================================== */
+/* ANIMACIÓN DE ENTRADA – MENÚ NAVEGACIÓN */
+nav a {
+  opacity: 0;
+  transform: translateY(15px);
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+/* Secuencia (delay escalonado) */
+nav a:nth-child(1) { animation-delay: 0.1s; }
+nav a:nth-child(2) { animation-delay: 0.2s; }
+nav a:nth-child(3) { animation-delay: 0.3s; }
+nav a:nth-child(4) { animation-delay: 0.4s; }
+nav a:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* ===================================== */
+/* AJUSTE FINAL DE TIPOGRAFÍA */
+/* ===================================== */
+
+body {
+  font-size: 16px;       /* Tamaño base ideal */
+}
+
+h1 {
+  line-height: 1.3;
+}
+
+h2 {
+  line-height: 1.4;
+}
+
+p {
+  line-height: 1.7;      /* Lectura más cómoda */
+}
+
+/* ===================================== */
+/* ESPACIADOS FINALES */
+/* ===================================== */
+
+section {
+  padding-top: 20px;
+}
+
+.producto {
+  padding: 25px;        /* Más aire interno */
+}
+
+.carrito {
+  padding: 35px;
+}
+
+/* ===================================== */
+/* HEADER – AJUSTE FINAL */
+/* ===================================== */
+
+header {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* ============================= */
+/* LINKS DEL FOOTER */
+/* ============================= */
+
+.footer-link {
+  color: #ffffff;        /* color verde */
+  text-decoration: none; /* saca el subrayado */
+  font-weight: 500;
+}
+
+/* Efecto al pasar el mouse */
+.footer-link:hover {
+  text-decoration: underline;
+}
+
+
+/* ============================= */
+/* SECCIÓN VALORES / NOSOTROS */
+/* ============================= */
+
+.valores {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.valores h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #2f6f4e;
+}
+
+.valores h3 {
+  margin-top: 30px;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+.valores p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+  color: #333;
+}
+
+.valores ul {
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.valores li {
+  margin-bottom: 8px;
+}
+
+.valores-cierre {
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+
+/* ============================= */
+/* SECCIÓN MISIÓN */
+/* ============================= */
+
+.mision {
+  max-width: 800px;
+  margin: 60px auto 80px;
+  padding: 30px 20px;
+  text-align: center;
+  background-color: #f7f9f7;
+  border-radius: 8px;
+}
+
+.mision h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #2f6f4e;
+}
+
+.mision p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #444;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+/* ============================= */
+/* SECCIÓN CONTACTO */
+/* ============================= */
+
+.contacto {
+  max-width: 700px;
+  margin: 60px auto 40px;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.contacto h1 {
+  font-size: 2.2rem;
+  color: #2f6f4e;
+  margin-bottom: 15px;
+}
+
+.contacto p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+/* ============================= */
+/* FORMULARIO DE CONTACTO */
+/* ============================= */
+
+.contacto-formulario {
+  max-width: 600px;
+  margin: 0 auto 80px;
+  padding: 30px 20px;
+  background-color: #f7f9f7;
+  border-radius: 10px;
+}
+
+.contacto-formulario h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #2f6f4e;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.contact-form input,
+.contact-form textarea {
+  margin-top: 6px;
+  padding: 10px;
+  font-size: 0.95rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-family: inherit;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #2f6f4e;
+}
+
+.contact-form button {
+  margin-top: 15px;
+  padding: 12px;
+  font-size: 1rem;
+  background-color: #2f6f4e;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.contact-form button:hover {
+  background-color: #24563d;
+}
+
+
+/* ============================= */
+/* ALGUNOS ESTILOS DE CARRITO.HTML */
+/* ============================= */
+
+.cart-summary {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.cart-summary .btn-primary {
+  background-color: #4CAF50; /* Verde */
+  color: white;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-top: 10px;
+}
+
+.cart-summary .btn-primary:hover {
+  background-color: #45a049;
+}
+
+.cart-summary .aviso-compra {
+  font-size: 0.9rem;
+  color: #333;
+  margin-bottom: 10px;
+}

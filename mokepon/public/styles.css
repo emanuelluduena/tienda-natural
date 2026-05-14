@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=BBH+Bogle&family=Bitcount+Prop+Single:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Carattere&display=swap');
+
+body {
+    background-color: darkslategray;
+    font-family: "Bitcount Prop Single", system-ui;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings:
+        "slnt" 0,
+        "CRSV" 0.5,
+        "ELSH" 0,
+        "ELXP" 0;
+}
+
+/* -------- SELECCIÓN DE MASCOTAS -------- */
+
+#seleccionarMascotas {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.titulo {
+    color: rgb(16, 10, 1);
+}
+
+.subtitulo {
+    font-size: 20px;
+}
+
+.tarjetas {
+    display: flex;
+    gap: 10px;
+}
+
+.tarjetaDeMokepon {
+    width: 172px;
+    height: 83px;
+    padding: 23px;
+    box-sizing: content-box;
+    border-radius: 18px;
+
+    display: inline-flex;
+    flex-direction: column;
+    gap: 3px;
+
+    background: #19057f;
+    color: cornsilk;
+    font-size: 20px;
+}
+
+.tarjetaDeMokepon img {
+    position: relative;
+    top: -40px;
+    left: 87px;
+    width: 82px;
+}
+
+input {
+    display: none;
+}
+
+input:checked + label {
+    background-color: #261CC1;
+}
+
+#botonMascota {
+    margin-top: 55px;
+    width: 221px;
+    height: 50px;
+
+    border-radius: 20px;
+    border: solid 4px white;
+    background: transparent;
+
+    font-family: "BBH Bogle", sans-serif;
+    font-size: 20px;
+}
+
+/* -------- ATAQUES -------- */
+
+#seleccionarAtaque {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.BAtaque {
+    width: 80px;
+    padding: 10px;
+
+    border-radius: 100px;
+    background-color: blue;
+    color: azure;
+
+    font-family: "BBH Bogle", sans-serif;
+    font-size: 20px;
+}
+
+#resultado {
+    margin: 20px auto;
+    padding: 20px;
+    width: 280px;
+    min-height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 26px;
+    font-weight: bold;
+    text-align: center;
+
+    border-radius: 15px;
+    border: 3px solid #444;
+
+    background-color: #ecf0f1;
+    color: #333;
+}
+
+#botonReiniciar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    border: none;
+    background-color: darkslategrey;
+    color: whitesmoke;
+    font-size: 25px;
+}
+
+.ataques {
+    display: grid;
+    grid-template-columns: 100px 100px;
+    justify-content: space-evenly;
+    justify-items: center;
+}
+
+.ataqueDelJugador,
+.ataqueDelEnemigo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* -------- MAPA -------- */
+
+#verMapa {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#verMapa button {
+    margin: 12px;
+    width: 112px;
+    height: 50px;
+
+    border-radius: 22px;
+    border: solid 4px white;
+    background: transparent;
+
+    font-family: "BBH Bogle", sans-serif;
+    font-size: 20px;
+}
+
+/* -------- RESPONSIVE -------- */
+
+@media (max-width: 560px) {
+    .tarjetas {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 300px) {
+    #verMapa div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}

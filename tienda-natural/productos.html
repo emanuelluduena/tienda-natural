@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Productos | Sabores de la Tierra</title>
+
+  <!-- Responsive: importante para celulares -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Conexión con el CSS general -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+  <!-- ================= HEADER ================= -->
+  <!-- Es igual en todas las páginas -->
+  <header>
+
+    <!-- Nombre / logo del sitio -->
+    <h1>Sabores de la Tierra</h1>
+
+    <!-- =====================================
+         NAVEGACIÓN PRINCIPAL
+         Menú del sitio
+    ====================================== -->
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="productos.html">Productos</a>
+      <a href="nosotros.html">Nosotros</a>
+      <a href="carrito.html" class="nav-carrito">
+      <span>Carrito</span>
+
+  <div class="carrito-icono">
+    <span class="icono">🛒</span>
+    <span class="contador" id="contador-carrito">0</span>
+  </div>
+</a>
+
+</a>
+
+    </nav>
+
+  </header>
+
+  <!-- ================= CONTENIDO PRINCIPAL ================= -->
+  <main class="container">
+
+    <!-- Título de la página -->
+    <section>
+      <h1>Nuestros Productos</h1>
+      <p>
+        Descubrí nuestra selección de productos naturales,
+        pensados para una alimentación sana y consciente.
+      </p>
+    </section>
+
+    <!-- ================= GRILLA DE PRODUCTOS ================= -->
+    <section>
+
+      <div class="productos-grid">
+
+        <!-- PRODUCTO 1 -->
+        <article class="producto">
+          <img src="img/producto1.jpg" alt="Almendras Naturales">
+          <h3>Almendras Naturales</h3>
+          <p class="precio">$3.200</p>
+          <a href="carrito.html" class="btn-producto">Agregar</a>
+        </article>
+
+        <!-- PRODUCTO 2 -->
+        <article class="producto">
+          <img src="img/producto2.jpg" alt="Nueces">
+          <h3>Nueces</h3>
+          <p class="precio">$3.800</p>
+          <a href="carrito.html" class="btn-producto">Agregar</a>
+        </article>
+
+        <!-- PRODUCTO 3 -->
+        <article class="producto">
+          <img src="img/producto3.jpg" alt="Semillas de Chía">
+          <h3>Semillas de Chía</h3>
+          <p class="precio">$1.900</p>
+          <a href="carrito.html" class="btn-producto">Agregar</a>
+        </article>
+
+        <!-- PRODUCTO 4 -->
+        <article class="producto">
+          <img src="img/producto4.jpg" alt="Avena Arrollada">
+          <h3>Avena Arrollada</h3>
+          <p class="precio">$1.400</p>
+          <a href="carrito.html" class="btn-producto">Agregar</a>
+        </article>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- =====================================
+       FOOTER
+       Información de contacto
+  ====================================== -->
+  <footer>
+    <p>📍 
+      <a href="https://maps.app.goo.gl/as6M8Drw7A7B4qcY6"
+      target="_blank"
+      class="footer-link"
+    >
+      Independencia 1054 - Córdoba
+      </a>
+    </p>
+    <p>
+    📲 WhatsApp:
+    <a href="https://wa.me/5493515426971" target="_blank">
+      Escribinos
+    </a>
+  </p>
+    
+    <p>
+    📸
+    <a 
+      href="https://www.instagram.com/saboresdelatierradiet/"
+      target="_blank"
+      class="footer-link"
+    >
+      @saboresdelatierradiet
+    </a>
+  </p>
+
+  </footer>
+
+  <!-- Botón flotante de WhatsApp -->
+<a
+  href="https://wa.me/5493515426971"
+  class="whatsapp-float"
+  target="_blank"
+  aria-label="Contactar por WhatsApp"
+>
+  <img
+    src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+    alt="WhatsApp"
+  />
+</a>
+
+
+</body>
+</html>
