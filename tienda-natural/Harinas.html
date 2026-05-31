@@ -8,46 +8,50 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+
 </head>
 
 <body>
 
   <header>
-    <h1>Sabores de la Tierra</h1>
-    <nav>
-      <a href="index.html">Inicio</a>
-      <a href="productos.html">Productos</a>
-      <a href="nosotros.html">Nosotros</a>
-      <a href="carrito.html" class="nav-carrito">
-        <span>Carrito</span>
-        <div class="carrito-icono">
-          <span class="icono">🛒</span>
-          <span class="contador" id="contador-carrito">0</span>
-        </div>
-      </a>
-    </nav>
-  </header>
+
+  <img 
+    src="img/logo_transparente.png" 
+    alt="Sabores de la Tierra"
+    style="height: 100px; width: auto;"
+  >
+
+  <img 
+    src="img/logo nuevo con fondo blanco.jpg" 
+    alt="Logo Sabores de la Tierra"
+    style="height: 150px; width: auto; border-radius: 50%; position: absolute; left: 50%; transform: translateX(-50%); top: 10px; z-index: 10;"
+  >
+
+  <nav>
+    <a href="index.html">Inicio</a>
+    <a href="productos.html">Productos</a>
+    <a href="nosotros.html">Nosotros</a>
+    <a href="#" class="nav-carrito" onclick="abrirCarrito(); return false;">
+      <span>Carrito</span>
+      <div class="carrito-icono">
+        <span class="icono">🛒</span>
+        <span class="contador" id="contador-carrito">0</span>
+      </div>
+    </a>
+  </nav>
+
+</header>
 
   <main>
 
-    <section class="hero">
-      <h2>Alimentación consciente para una vida mejor</h2>
-      <p>Productos naturales seleccionados con cuidado</p>
-    </section>
-
-    <!-- PRODUCTOS DESTACADOS -->
-    <section class="productos">
-      <h2>Productos Destacados</h2>
-      <div class="productos-grid" id="productos-destacados"></div>
-    </section>
+    
 
     <!-- CATEGORÍAS -->
-    <section class="categorias">
-      <h2>Categorías</h2>
-      <ul>
-        
-      </ul>
-    </section>
+  <section class="categorias">
+  <h2>Categorías</h2>
+  <div class="categorias-grid"></div>
+</section>
 
     <!-- HARINAS -->
     <section class="productos">
@@ -92,17 +96,31 @@
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
   </a>
 
-  <script>
-    const botonFinalizar = document.getElementById("btn-finalizar-compra");
-    botonFinalizar.addEventListener("click", () => {
-      window.location.href = "carrito.html";
-    });
-  </script>
+  
 
   <script>
     const categoriaActual = "harinas";
   </script>
   <script src="js/main.js"></script>
+
+<!-- CARRITO LATERAL -->
+<div class="carrito-overlay" id="carrito-overlay" onclick="cerrarCarrito()"></div>
+
+<div class="carrito-panel" id="carrito-panel">
+  <div class="carrito-panel-header">
+    <h2>Tu pedido 🛒</h2>
+    <button class="carrito-cerrar" onclick="cerrarCarrito()">✕</button>
+  </div>
+  <div class="carrito-items" id="carrito-items">
+    <p class="carrito-vacio">El carrito está vacío</p>
+  </div>
+  <div class="carrito-panel-footer">
+    <strong>Total: $<span id="carrito-total">0</span></strong>
+    <button id="btn-finalizar-compra" class="btn-finalizar">
+      Finalizar Compra
+    </button>
+  </div>
+</div>
 
 </body>
 </html>

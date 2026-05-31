@@ -2,7 +2,7 @@
 /* VARIABLES DE COLOR (IDENTIDAD VISUAL) */
 /* ===================================== */
 :root {
-  --verde-principal: #6b8e23;
+  --verde-principal: #F5A623;
   --verde-suave: #e6f2d9;
   --texto-principal: #333;
 }
@@ -32,11 +32,11 @@ h1{
 
 h2, h3 {
   font-weight: 600;
-  color: var(--verde-principal);
+  color: #0b755b;
 }
 
 h1 { font-size: 2.2rem; }
-h2 { font-size: 1.6rem; margin-bottom: 10px; }
+h2 { font-size: 2.2rem; margin-bottom: 10px; }
 h3 { font-size: 1.2rem; margin-bottom: 10px; color: var(--texto-principal); }
 
 p {
@@ -64,16 +64,31 @@ a:hover {
 }
 
 /* ===================================== */
+/* LOGOS DEL HEADER                      */
+/* ===================================== */
+.logo-texto {
+  height: 80px;
+}
+
+.logo-redondo {
+  height: 150px;
+}
+
+/* ===================================== */
 /* HEADER / NAVEGACIÓN */
 /* ===================================== */
 header {
   background-color: var(--verde-principal);
   color: white;
-  padding: 20px;
-
+  padding: 10px 30px;
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
   align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  position: relative;
+  overflow: visible;
 }
 
 header h1 {
@@ -132,7 +147,7 @@ nav a:hover {
 .hero {
   background-color: var(--verde-suave);
   text-align: center;
-  padding: 60px 20px;
+  padding: 30px 20px;
 }
 
 .hero h2 { margin-bottom: 10px; }
@@ -143,7 +158,8 @@ nav a:hover {
 /* ===================================== */
 .categorias {
   background-color: white;
-  padding: 40px 20px;
+  padding: 0px 20px;
+  text-align: center;
 }
 
 .categorias ul {
@@ -165,7 +181,9 @@ nav a:hover {
 /* ===================================== */
 .productos {
   background-color: #f9f9f9;
-  padding: 40px 20px;
+  padding: 0px 20px;
+  overflow: visible;
+  text-align: center;
 }
 
 .productos-grid {
@@ -234,8 +252,8 @@ nav a:hover {
 /* ===================================== */
 
 .producto:hover {
-  transform: translateY(-8px) scale(1.20); /* Suben y se agrandan levemente */
-  box-shadow: 0 12px 25px rgba(0,0,0,0.12); /* Sombra más profunda */
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.12);
 }
 
 
@@ -442,10 +460,84 @@ footer a:hover { text-decoration: underline; }
 }
 
 /* ===================================== */
-/* PASO EXTRA: BASE RESPONSIVE (MUY SIMPLE) */
+/* RESPONSIVE MOBILE                     */
 /* ===================================== */
 @media (max-width: 600px) {
   .producto { width: 100%; }
+
+  /* HEADER MOBILE */
+  header {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 16px;
+    gap: 8px;
+  }
+
+  /* Logo transparente — más chico en mobile */
+  .logo-texto {
+    height: 45px;
+  }
+
+  /* Logo redondo — más chico y sin posición absoluta */
+  .logo-redondo {
+    height: 70px;
+    position: static !important;
+    transform: none !important;
+    left: auto !important;
+    top: auto !important;
+  }
+
+  /* NAV en mobile — fila con scroll horizontal */
+  nav {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 12px;
+    width: 100%;
+    justify-content: center;
+    padding-bottom: 4px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  nav a {
+    font-size: 13px;
+    white-space: nowrap;
+  }
+
+  /* GRID DE PRODUCTOS en mobile */
+  .productos-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  /* CARRUSEL DE PRODUCTOS */
+  .productos-carrusel-track .producto {
+    min-width: 75vw;
+    max-width: 75vw;
+  }
+
+  /* MISIÓN — quitar padding lateral excesivo */
+  .mision p {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  /* CATEGORÍAS — iconos más chicos */
+  .categoria-icono {
+    width: 56px;
+    height: 56px;
+  }
+
+  .categoria-icono i {
+    font-size: 24px;
+  }
+
+  .categoria-card {
+    width: 70px;
+  }
+
+  .categoria-card span {
+    font-size: 10px;
+  }
 }
 
 /* ===================================== */
@@ -508,6 +600,7 @@ body {
 
 h1 {
   line-height: 1.3;
+  
 }
 
 h2 {
@@ -751,8 +844,10 @@ header {
 /* ============================= */
 .instagram-section {
   text-align: center;
-  padding: 40px 20px;
+  padding: 20px 20px;
   background-color: #fff;
+  max-height: 600px;
+  overflow: hidden;
 }
 
 .instagram-section p {
@@ -776,7 +871,7 @@ header {
 
 .carrusel-item {
   min-width: 320px;
-  max-width: 320px;
+  max-width: 50px;
 }
 
 .carrusel-btn {
@@ -808,4 +903,208 @@ header {
 .btn-instagram:hover {
   background-color: #556b2f;
   text-decoration: none;
+}
+
+/* ============================= */
+/* CARRUSEL DE PRODUCTOS        */
+/* ============================= */
+
+.productos-carrusel-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.productos-carrusel-track-container {
+  flex: 1;
+  overflow: hidden;
+  min-width: 0;
+}
+
+.productos-carrusel-track {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.4s ease;
+}
+
+.productos-carrusel-track .producto {
+  min-width: 220px;
+  max-width: 240px;
+  flex-shrink: 0;
+  overflow: visible;
+}
+
+.carrusel-prod-btn {
+  background-color: var(--verde-principal);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  font-size: 1.3rem;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carrusel-prod-btn:hover {
+  background-color: #556b2f;
+  transform: scale(1.1);
+}
+
+@media (max-width: 600px) {
+  .productos-carrusel-track .producto {
+    min-width: 80vw;
+    max-width: 80vw;
+  }
+}
+
+/* ============================= */
+/* CATEGORÍAS CON ÍCONOS        */
+/* ============================= */
+
+/* ============================= */
+/* CATEGORÍAS CON ÍCONOS        */
+/* ============================= */
+
+.categorias-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+
+.categoria-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  width: 90px;
+  cursor: pointer;
+}
+
+/* Texto debajo de los iconos de categorías */
+.categoria-card span {
+  font-family: 'Nunito', sans-serif;
+  font-size: 11px;
+  color: #0b755b;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.3;
+}
+
+
+
+.categoria-icono {
+  width: 72px;
+  height: 72px;
+  border-radius: 16px;
+  background: #2BBDA8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.categoria-icono i {
+  font-size: 32px;
+  color: white;
+}
+
+.categoria-card:hover .categoria-icono {
+  background: #556b2f;
+  transform: translateY(-4px);
+}
+
+/* ============================= */
+/* CARRITO LATERAL (PANEL)      */
+/* ============================= */
+
+.carrito-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 998;
+}
+
+.carrito-overlay.activo {
+  display: block;
+}
+
+.carrito-panel {
+  position: fixed;
+  top: 0;
+  right: -420px;
+  width: 380px;
+  height: 100%;
+  background: white;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  box-shadow: -4px 0 20px rgba(0,0,0,0.15);
+  transition: right 0.3s ease;
+}
+
+.carrito-panel.activo {
+  right: 0;
+}
+
+.carrito-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: #6b8e23;
+  color: white;
+}
+
+.carrito-panel-header h2 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: white;
+}
+
+.carrito-cerrar {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.carrito-panel .carrito-items {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+  border: none;
+  margin: 0;
+}
+
+.carrito-panel-footer {
+  padding: 20px;
+  border-top: 1px solid #eee;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.carrito-panel-footer strong {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+@media (max-width: 600px) {
+  .carrito-panel {
+    width: 100%;
+    right: -100%;
+  }
 }
