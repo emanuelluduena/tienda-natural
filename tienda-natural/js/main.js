@@ -30,7 +30,7 @@ const productos = [
   // ===== FRUTOS SECOS =====
   {
     nombre: "Castañas x 1 kg",
-    precio: 0,
+    precio: 1,
     descripcion: "Energía · Grasas saludables · Proteínas · Antioxidantes",
     imagen: "img/castanas.jpg",
     categoria: "frutos-secos"
